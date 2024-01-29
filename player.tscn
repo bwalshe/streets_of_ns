@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://dq2ua3ydrl683"]
+
+[ext_resource type="Texture2D" uid="uid://ca6o1nhh4ittd" path="res://sprites/hagard_walk.png" id="1_7eeon"]
+[ext_resource type="Script" path="res://player.gd" id="1_t8rah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j2ed"]
+atlas = ExtResource("1_7eeon")
+region = Rect2(0, 0, 66, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqarw"]
+atlas = ExtResource("1_7eeon")
+region = Rect2(66, 0, 66, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho8nu"]
+atlas = ExtResource("1_7eeon")
+region = Rect2(132, 0, 66, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih4ou"]
+atlas = ExtResource("1_7eeon")
+region = Rect2(198, 0, 66, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sxl2"]
+atlas = ExtResource("1_7eeon")
+region = Rect2(264, 0, 66, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj5jg"]
+atlas = ExtResource("1_7eeon")
+region = Rect2(330, 0, 66, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmhdg"]
+atlas = ExtResource("1_7eeon")
+region = Rect2(396, 0, 66, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivv8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j2ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqarw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho8nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih4ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sxl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj5jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmhdg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hgpo"]
+radius = 17.0
+height = 84.0
+
+[node name="player" type="Area2D"]
+position = Vector2(46, 65)
+script = ExtResource("1_t8rah")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ivv8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6hgpo")
